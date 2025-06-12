@@ -14,7 +14,6 @@ html {
     --font-display: 'Baloo', 'Orbitron', sans-serif;
     --font-body: 'Baloo',  'Inter', sans-serif;
 
-
     overflow-x: hidden;
     overflow-y: hidden;
     font-family: Baloo, Nova Flat, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -37,8 +36,15 @@ html {
 }
 
 
-body { font-family: var(--font-body); color: white; }
-h1, .logo { font-family: var(--font-display); }
+body { 
+    font-family: var(--font-body); 
+    color: white; 
+    transition: all 0.3s ease;
+}
+
+h1, .logo { 
+    font-family: var(--font-display); 
+}
 
 button {
     font-family: Nova Flat, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -66,3 +72,100 @@ h1 {
 a {
     text-decoration: none!important;
 }
+
+/* Transições seamless entre páginas */
+.page-transition-enter {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+.page-transition-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease-out;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+.page-transition-exit {
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+}
+
+.page-transition-exit-active {
+    opacity: 0;
+    transition: opacity 200ms ease-in;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+}
+
+/* Melhorias de performance para animações */
+* {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Smooth scrolling para elementos com overflow */
+.scrollable {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Efeitos de loading suaves */
+@keyframes shimmer {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+.loading-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Melhorias de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Efeitos de focus para acessibilidade */
+a:focus,
+button:focus {
+    outline: 2px solid #FFB041;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Melhorias de performance para mobile */
+@media (max-width: 768px) {
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    body {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    }
+}
+

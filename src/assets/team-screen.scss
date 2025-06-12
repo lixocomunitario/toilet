@@ -6,6 +6,18 @@
     justify-content: center;
     align-items: center;
     background: url('/spaceBG.png') no-repeat center/cover;
+    animation: fadeIn 0.8s ease-out;
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 
     .team-container {
         position: relative;
@@ -22,6 +34,18 @@
             justify-content: center;
             align-items: center;
             gap: 20px;
+            animation: slideInUp 1s ease-out 0.5s both;
+
+            @keyframes slideInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
 
             &__image-wrapper {
                 display: flex;
@@ -32,16 +56,28 @@
                 border: 3px solid #FFFFFF;
                 width: 50px;
                 height: 50px;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.1) rotate(5deg);
+                    box-shadow: 0 0 20px rgba(255, 176, 65, 0.8);
+                }
             }
 
             img {
                 width: 33px;
                 height: 50px;
+                transition: transform 0.3s ease;
             }
 
             span {
                 font-weight: 700;
                 font-size: 1.5rem;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: #FFB041;
+                }
             }
         }
 
@@ -85,12 +121,31 @@
             flex-direction: column;
             align-items: center;
             height: max-content;
+            animation: slideInUp 0.8s ease-out;
+            animation-fill-mode: both;
+
+            &:nth-child(1) { animation-delay: 0.1s; }
+            &:nth-child(2) { animation-delay: 0.2s; }
+            &:nth-child(3) { animation-delay: 0.3s; }
+            &:nth-child(4) { animation-delay: 0.4s; }
 
             $parent: &;
 
             &:hover {
                 #{$parent}__image {
-                    box-shadow: 0 0 12px 8px rgba(255,255,255,0.7), 0 0 60px 0 rgba(255,255,255,0.3);
+                    transform: scale(1.08) translateY(-8px);
+                    box-shadow: 
+                        0 0 20px 8px rgba(255,255,255,0.8), 
+                        0 0 60px 0 rgba(255,255,255,0.4),
+                        0 15px 35px rgba(0,0,0,0.3);
+                    border-color: #FFB041;
+                }
+
+                #{$parent}__text {
+                    h3 {
+                        color: #FFB041;
+                        text-shadow: 0 0 10px rgba(255, 176, 65, 0.6);
+                    }
                 }
             }
 
@@ -99,21 +154,35 @@
                 max-width: 200px;
                 aspect-ratio: 1 / 1;
                 object-fit: cover;
-                border-radius: 10px;
+                border-radius: 15px;
                 border: 3px solid #FFFFFF;
                 margin-bottom: 1rem;
-                transition: box-shadow 0.5s ease-out;
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                cursor: pointer;
             }
 
             &__text {
                 text-align: center;
+                transition: all 0.3s ease;
 
                 h3, span {
                     color: #FFFFFF;
                     text-decoration: none!important;
                     margin: 0;
+                    transition: all 0.3s ease;
+                }
+
+                h3 {
+                    font-size: 1.2rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                span {
+                    opacity: 0.8;
+                    font-size: 0.9rem;
                 }
             }
         }
     }
 }
+

@@ -8,9 +8,27 @@
     align-items: center;
     font-size: 0.8rem;
     opacity: 0.7;
+    transition: opacity 0.3s ease;
+    animation: slideInUp 1s ease-out 1s both;
+
+    @keyframes slideInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 0.7;
+            transform: translateY(0);
+        }
+    }
+
+    &:hover {
+        opacity: 1;
+    }
 
     &__item {
         position: absolute;
+        transition: all 0.3s ease;
 
         &--left {
             left: 0;
@@ -22,6 +40,13 @@
 
         &--right {
             right: 0;
+            display: flex; /* Adicionado para alinhar os ícones lado a lado */
+            align-items: center; /* Alinha verticalmente os ícones */
+            gap: 12px; /* Espaçamento entre os ícones */
+        }
+
+        &:hover {
+            transform: translateY(-2px);
         }
 
         @media (max-width: 768px) {
@@ -34,18 +59,40 @@
                 top: 0;
                 left: 0!important;
             }
+
+            &--right {
+                flex-direction: column; /* Empilha os ícones no mobile */
+                gap: 0; /* Remove o espaçamento no mobile */
+            }
         }
     }
 
     a {
-        width: 100%;
-        margin-left: 12px;
+        // width: 100%; /* Removido para evitar que ocupe toda a largura */
+        // margin-left: 12px; /* Removido, pois o gap já faz o espaçamento */
         color: #fff;
         opacity: 1;
+        transition: all 0.3s ease;
+        display: inline-block;
+
+        &:hover {
+            color: #FFB041;
+            text-shadow: 0 0 8px rgba(255, 176, 65, 0.6);
+            transform: scale(1.05);
+        }
 
         img {
             width: 44px;
             height: 44px;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+
+            &:hover {
+                transform: scale(1.1) rotate(5deg);
+                box-shadow: 0 0 15px rgba(255, 176, 65, 0.6);
+                filter: brightness(1.1);
+            }
         }
     }
 }
+
