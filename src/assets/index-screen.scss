@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.scene {
+    z-index: 1;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: url('/images/bg-space.png') center/cover no-repeat;
+}
+
+.layer {
+  z-index: 2;
+  position: absolute;
+  will-change: transform;
+}
+
+.layer__img {
+  position: relative;
+  z-index: 3;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  will-change: transform;
+  transition: scale 0.5s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    scale: 1.05;
+  }
+}
+
+.hotspot {
+    will-change: transform;
+    transition: transform 0.3s cubic-bezier(.22,1,.36,1);
+
+    margin: 10px;
+    --tx: 0px;
+    --ty: 0px;
+    transform: translate(
+        calc(-50% + var(--tx)),
+        calc(-50% + var(--ty))
+    );
+    transition: transform 0.2s ease-out;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 2px solid white;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    z-index: 10;
+
+    &__inner {
+        transition: transform 0.2s ease-out;
+        width: 0.5rem;
+        height: 0.5rem;
+        border: 2px solid white;
+        border-radius: 50%;
+        background: white;
+    }
+
+    $hotspot: &;
+
+    &:hover {
+        & > #{$hotspot}__inner {
+            border: 10px solid white;
+            background: transparent;
+        }
+    }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  background-color: #000;
+}
+
+@media (max-width: 768px) {
+  .layer {
+    transform: scale(0.7) !important;
+  }
+  .hotspot {
+    width: 4rem;
+    height: 4rem;
+  }
+}
