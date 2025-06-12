@@ -1,6 +1,8 @@
 enum AppRoute {
     INDEX = '/',
-    COOL = '/cool',
+    TEAM = '/team',
+    INVESTORS = '/investors',
+    JOBS = '/jobs',
 }
 
 export { AppRoute };

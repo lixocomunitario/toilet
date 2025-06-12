@@ -1,0 +1,62 @@
+.topbar {
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    @media (max-width: 900px) {
+        height: 70px!important;
+    }
+
+    &__logo {
+        position: absolute;
+        top: 0;
+        left: 10%;
+        width: 100px;
+        height: 100px;
+        background-image: url('/astro-text.png');
+        background-size: cover;
+        background-position: center;
+
+        @media (max-width: 900px) {
+            width: 70px!important;
+            height: 70px!important;
+        }
+    }
+
+    &__actions {
+        position: absolute;
+        top: 0;
+        right: 10%;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        height: 100%;
+
+        @media (max-width: 900px) {
+            right: 5%!important;
+            gap: 5px!important;
+
+            a {
+                font-size: 0.8rem!important;
+            }
+        }
+
+        a {
+            color: #FFFFFF;
+            font-family: Baloo;
+            font-weight: 600;
+            font-size: 1.5rem;
+            text-decoration: none;
+            line-height: 100%;
+
+            &.active {
+                color: #DBAE4D;
+            }
+        }
+    }
+}

@@ -1,54 +1,28 @@
-import { FunctionComponent, ReactNode } from 'react'
+import { FunctionComponent } from 'react'
 import { IndexScreen } from './screens/IndexScreen';
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { AppRoute } from './constants/routes';
-import { AnimatePresence, motion } from 'framer-motion'
-import { DetailsPage } from './screens/DetailsPage';
-
-
-const pageVariants = {
-    initial: { y: '100%' },
-    animate: { y: 0 },
-    exit:    { y: '-100%' },
-}
-  
-const pageTransition = {
-    type: 'spring',
-    stiffness: 90,
-    damping: 20,
-    duration: 0.9,
-    // ease: 'easeInOut',
-}
-  
-const PageWrapper: React.FC<{ children: ReactNode }> = ({ children }) => (
-    <motion.div
-        variants={pageVariants}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        transition={pageTransition}
-        style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-        }}
-    >
-        {children}
-    </motion.div>
-);
+import { TopBar } from './screens/TopBar';
+import { TeamScreen } from './screens/TeamScreen';
+import { InvestorsScreen } from './screens/InvestorsScreen';
+import { JobsScreen } from './screens/JobsScreen';
+import { Footer } from './screens/Footer';
 
 const AppRouter: FunctionComponent = () => {
-    const location = useLocation();
 
     return (
-        <AnimatePresence mode="wait">
-            <Routes location={location} key={location.key}>
-                <Route path={AppRoute.INDEX} element={<><IndexScreen /></>} />
-                <Route path={AppRoute.COOL} element={<PageWrapper><DetailsPage /></PageWrapper>} />
-            </Routes>
-        </AnimatePresence>
+        <>
+            <BrowserRouter>
+                <TopBar />
+                <Routes>
+                    <Route path={AppRoute.INDEX} element={<IndexScreen />} />
+                    <Route path={AppRoute.TEAM} element={<TeamScreen />} />
+                    <Route path={AppRoute.INVESTORS} element={<InvestorsScreen />} />
+                    <Route path={AppRoute.JOBS} element={<JobsScreen />} />
+                </Routes>
+                <Footer />
+            </BrowserRouter>
+        </>
     );
 }
 

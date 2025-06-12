@@ -1,0 +1,51 @@
+.footer {
+    position: sticky;
+    bottom: 0;
+    height: 50px;
+    width: 90%;
+    left: 5%;
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    opacity: 0.7;
+
+    &__item {
+        position: absolute;
+
+        &--left {
+            left: 0;
+        }
+
+        &--center {
+            left: calc(50% - 45px);
+        }
+
+        &--right {
+            right: 0;
+        }
+
+        @media (max-width: 768px) {
+            &--left {
+                left: 0;
+                bottom: 10px;
+            }
+
+            &--center {
+                top: 0;
+                left: 0!important;
+            }
+        }
+    }
+
+    a {
+        width: 100%;
+        margin-left: 12px;
+        color: #fff;
+        opacity: 1;
+
+        img {
+            width: 44px;
+            height: 44px;
+        }
+    }
+}
