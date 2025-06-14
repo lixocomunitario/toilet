@@ -247,7 +247,9 @@
     @media (max-width: 600px) {
         &__container {
             padding: 0 8px;
-            padding-bottom: 60px; /* Adicionado para separar do footer */
+            padding-bottom: 80px; /* Aumentado para dar mais espaço do footer */
+            height: calc(100vh - 100px); /* Definindo altura máxima */
+            overflow-y: auto; /* Permitindo scroll quando necessário */
 
             &__jobs {
                 max-width: 90vw;
@@ -267,7 +269,7 @@
 
                 &__item {
                     padding: 12px 0; /* Mantido padding vertical, ajuste horizontal no header */
-                    margin-bottom: 24px;
+                    margin-bottom: 30px; /* Aumentado espaçamento entre itens */
 
                     &__header__title {
                         font-size: 1rem;
@@ -275,7 +277,8 @@
 
                     &__description {
                         font-size: 0.8rem;
-                        padding-bottom: 20px; /* Adicionado espaçamento inferior */
+                        padding-bottom: 25px; /* Aumentado espaçamento inferior */
+                        margin-bottom: 15px; /* Adicionado margin inferior */
                     }
 
                     &__actions {

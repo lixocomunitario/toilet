@@ -145,6 +145,16 @@
                 }
             }
 
+            &:focus,
+            &:active {
+                outline: none;
+            }
+
+            a:focus,
+            a:active {
+                outline: none;
+            }
+
             &__image {
                 width: 100%;
                 max-width: 200px;
