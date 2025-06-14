@@ -152,9 +152,16 @@ a {
 /* Efeitos de focus para acessibilidade */
 a:focus,
 button:focus {
-    outline: 2px solid #FFB041;
-    outline-offset: 2px;
-    border-radius: 4px;
+    outline: none !important;
+}
+
+/* Remover outline específico para avatares */
+.team-screen__team__player a:focus,
+.team-screen__team__player a:active,
+.investors-screen__team__player a:focus,
+.investors-screen__team__player a:active {
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 /* Melhorias de performance para mobile */

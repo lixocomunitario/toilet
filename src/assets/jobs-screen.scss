@@ -245,14 +245,21 @@
     }
 
     @media (max-width: 600px) {
+        position: fixed;
+        top: 100px;
+        left: 0;
+        right: 0;
+        bottom: 60px;
+        overflow-y: auto;
+        
         &__container {
             padding: 0 8px;
-            padding-bottom: 80px; /* Aumentado para dar mais espaço do footer */
-            height: calc(100vh - 100px); /* Definindo altura máxima */
-            overflow-y: auto; /* Permitindo scroll quando necessário */
+            height: 100%;
+            margin-top: 0;
 
             &__jobs {
                 max-width: 90vw;
+                padding-bottom: 40px;
 
                 .underline {
                     height: 2px;
@@ -268,8 +275,8 @@
                 }
 
                 &__item {
-                    padding: 12px 0; /* Mantido padding vertical, ajuste horizontal no header */
-                    margin-bottom: 30px; /* Aumentado espaçamento entre itens */
+                    padding: 12px 0;
+                    margin-bottom: 30px;
 
                     &__header__title {
                         font-size: 1rem;
@@ -277,8 +284,8 @@
 
                     &__description {
                         font-size: 0.8rem;
-                        padding-bottom: 25px; /* Aumentado espaçamento inferior */
-                        margin-bottom: 15px; /* Adicionado margin inferior */
+                        padding-bottom: 25px;
+                        margin-bottom: 15px;
                     }
 
                     &__actions {
