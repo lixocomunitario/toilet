@@ -245,21 +245,12 @@
     }
 
     @media (max-width: 600px) {
-        position: fixed;
-        top: 100px;
-        left: 0;
-        right: 0;
-        bottom: 60px;
-        overflow-y: auto;
-        
         &__container {
             padding: 0 8px;
-            height: 100%;
-            margin-top: 0;
+            padding-bottom: 100px;
 
             &__jobs {
                 max-width: 90vw;
-                padding-bottom: 40px;
 
                 .underline {
                     height: 2px;
@@ -284,8 +275,8 @@
 
                     &__description {
                         font-size: 0.8rem;
-                        padding-bottom: 25px;
-                        margin-bottom: 15px;
+                        padding-bottom: 30px;
+                        margin-bottom: 20px;
                     }
 
                     &__actions {
