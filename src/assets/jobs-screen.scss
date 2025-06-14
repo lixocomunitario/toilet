@@ -247,6 +247,7 @@
     @media (max-width: 600px) {
         &__container {
             padding: 0 8px;
+            padding-bottom: 60px; /* Adicionado para separar do footer */
 
             &__jobs {
                 max-width: 90vw;
@@ -274,6 +275,7 @@
 
                     &__description {
                         font-size: 0.8rem;
+                        padding-bottom: 20px; /* Adicionado espaçamento inferior */
                     }
 
                     &__actions {
