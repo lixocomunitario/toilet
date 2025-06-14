@@ -61,15 +61,14 @@
             }
 
             &--right {
-                flex-direction: column; /* Empilha os ícones no mobile */
-                gap: 0; /* Remove o espaçamento no mobile */
+                /* Removido flex-direction: column para que os ícones fiquem lado a lado no mobile */
+                /* Removido gap: 0 para manter o espaçamento de 12px no mobile */
+                /* Removendo a media query específica para os ícones do footer para que eles fiquem lado a lado também no mobile */
             }
         }
     }
 
     a {
-        // width: 100%; /* Removido para evitar que ocupe toda a largura */
-        // margin-left: 12px; /* Removido, pois o gap já faz o espaçamento */
         color: #fff;
         opacity: 1;
         transition: all 0.3s ease;

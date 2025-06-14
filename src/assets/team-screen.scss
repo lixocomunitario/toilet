@@ -5,7 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('/spaceBG.png') no-repeat center/cover;
+    background: url("/spaceBG.png") no-repeat center/cover;
     animation: fadeIn 0.8s ease-out;
 
     @keyframes fadeIn {
@@ -91,6 +91,7 @@
 
         @media (max-width: 768px) {
             padding-inline: 0!important;
+            padding-bottom: 60px; /* Adicionado para separar do footer */
         }
     }
 
