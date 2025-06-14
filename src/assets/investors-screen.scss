@@ -132,11 +132,6 @@
             &:hover {
                 #{$parent}__image {
                     transform: scale(1.08) translateY(-8px);
-                    box-shadow: 
-                        0 0 20px 8px rgba(255,255,255,0.8), 
-                        0 0 60px 0 rgba(255,255,255,0.4),
-                        0 15px 35px rgba(0,0,0,0.3);
-                    border-color: #FFB041;
                 }
 
                 #{$parent}__text {
@@ -152,10 +147,10 @@
                 max-width: 180px;
                 aspect-ratio: 1 / 1;
                 object-fit: cover;
-                border-radius: 15px;
+                border-radius: 50%;
                 border: 3px solid #FFFFFF;
                 margin-bottom: 1rem;
-                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                transition: all 0.3s ease-in-out;
                 cursor: pointer;
             }
 

@@ -114,7 +114,9 @@
 
                     &__location-container {
                         display: flex;
-                        justify-content: center;
+                        justify-content: flex-end;
+                        align-items: center;
+                        gap: 10px;
 
                         &__label {
                             color: #808080;
