@@ -46,13 +46,16 @@
         @media (max-width: 900px) {
             max-width: 90%;
             left: 5%;
+            margin-top: 200px; /* Ajuste para descer o texto */
 
             h1 {
                 font-size: 1.5rem!important;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra mais forte */
             }
 
             span {
                 font-size: 1rem!important;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra mais forte */
             }
         }
 

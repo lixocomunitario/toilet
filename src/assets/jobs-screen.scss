@@ -7,8 +7,9 @@
     animation: fadeIn 0.8s ease-out;
 
     @media (max-width: 768px) {
-        background: url('/mobile-others.png') no-repeat center/cover;
+        background: url("/mobile-others.png") no-repeat center/cover;
         background-attachment: scroll;
+        background-position: top; /* Garante que o background comece no topo */
     }
 
     @keyframes fadeIn {

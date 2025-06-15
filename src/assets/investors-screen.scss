@@ -9,8 +9,9 @@
     animation: fadeIn 0.8s ease-out;
 
     @media (max-width: 768px) {
-        background: url('/mobile-others.png') no-repeat center/cover;
+        background: url("/mobile-others.png") no-repeat center/cover;
         background-attachment: scroll;
+        background-position: top; /* Garante que o background comece no topo */
     }
 
     @keyframes fadeIn {
@@ -110,13 +111,14 @@
         gap: 2rem;
 
         @media (max-width: 768px) {
-            overflow-y: scroll;
+            overflow-y: auto;
             position: absolute;
             bottom: 50px;
             left: 0;
-            display: unset;
+            display: flex;
+            flex-direction: column;
             height: calc(100% - 150px);
-            scroll-behavior: smooth;
+            padding: 20px;
             
             /* Garantir que o scroll comece no topo */
             &::-webkit-scrollbar {
@@ -124,12 +126,10 @@
                 background: transparent;
             }
             
-            /* Forçar início no topo */
-            scroll-snap-type: y mandatory;
-            
+            /* Forçar início no primeiro elemento */
             .investors-screen__team__player:first-child {
-                scroll-snap-align: start;
                 margin-top: 0;
+                padding-top: 0;
             }
         }
 
