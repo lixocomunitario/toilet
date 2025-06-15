@@ -5,26 +5,23 @@ html {
 @font-face {
     font-family: Baloo;
     src: url('./fonts/Baloo2-VariableFont_wght.ttf') format('truetype');
-}
-
-:root {
-    cursor: url('./arrow.cur') 4 4, auto;
+}:root {
+    cursor: url(\'./arrow.cur\') 4 4, auto;
     --color-primary: #58d68d;
     --color-accent: #f5b041;
-    --font-display: 'Baloo', 'Orbitron', sans-serif;
-    --font-body: 'Baloo',  'Inter', sans-serif;
+    --font-display: \'Baloo\', \'Orbitron\', sans-serif;
+    --font-body: \'Baloo\',  \'Inter\', sans-serif;
 
     overflow-x: hidden;
-    overflow-y: hidden;
+    // overflow-y: hidden; /* Removido para permitir scroll da página */
     font-family: Baloo, Nova Flat, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
 
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
-    // background: url('/spaceBG.png') no-repeat center/cover;
-    background-attachment: fixed;
-
+    // background: url(\"/spaceBG.png\") no-repeat center/cover;
+    // background-attachment: fixed; /* Removido para permitir scroll do background */
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -34,7 +31,6 @@ html {
     //     background-attachment: scroll;
     // }
 }
-
 
 body { 
     font-family: var(--font-body); 

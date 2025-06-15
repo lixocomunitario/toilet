@@ -9,9 +9,10 @@
     animation: fadeIn 0.8s ease-out;
 
     @media (max-width: 768px) {
-        background: url("/mobile-others.png") no-repeat center/cover;
-        background-attachment: scroll;
-        background-position: top; /* Garante que o background comece no topo */
+        background: url("/mobile-others.png") no-repeat top/cover;
+        background-attachment: local; /* Permite que o background se mova com o scroll */
+        overflow-y: auto; /* Permite scroll vertical */
+        align-items: flex-start; /* Alinha conteúdo no topo */
     }
 
     @keyframes fadeIn {
@@ -98,6 +99,9 @@
         @media (max-width: 768px) {
             padding-inline: 0!important;
             padding-bottom: 60px; /* Adicionado para separar do footer */
+            padding-top: 80px; /* Adiciona espaço no topo para mobile */
+            height: auto; /* Permite altura automática */
+            min-height: 100vh; /* Garante altura mínima */
         }
     }
 
@@ -111,26 +115,15 @@
         gap: 2rem;
 
         @media (max-width: 768px) {
-            overflow-y: auto;
-            position: absolute;
-            bottom: 50px;
-            left: 0;
             display: flex;
             flex-direction: column;
-            height: calc(100% - 150px);
+            position: static; /* Remove posicionamento absoluto */
+            height: auto; /* Altura automática */
             padding: 20px;
+            gap: 30px; /* Espaçamento entre avatares */
             
-            /* Garantir que o scroll comece no topo */
-            &::-webkit-scrollbar {
-                width: 0px;
-                background: transparent;
-            }
-            
-            /* Forçar início no primeiro elemento */
-            .investors-screen__team__player:first-child {
-                margin-top: 0;
-                padding-top: 0;
-            }
+            /* Remove scroll interno - usa scroll da página */
+            overflow-y: visible;
         }
 
         &__player {
