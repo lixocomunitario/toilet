@@ -10,13 +10,9 @@
 
     @media (max-width: 768px) {
         background: url("/mobile-others.png") no-repeat top/cover;
-        background-attachment: scroll; /* Permite que o background se mova com o scroll */
+        background-attachment: local; /* Permite que o background se mova com o scroll */
         overflow-y: auto; /* Permite scroll vertical */
         align-items: flex-start; /* Alinha conteúdo no topo */
-        
-        /* Melhorias para scroll suave */
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch;
     }
 
     @keyframes fadeIn {
@@ -131,10 +127,6 @@
             
             /* Remove scroll interno - usa scroll da página */
             overflow-y: visible;
-            
-            /* Melhorias para scroll suave */
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
         }
 
         &__player {
