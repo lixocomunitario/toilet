@@ -6,6 +6,7 @@
     display: flex;
     justify-content: center;
     animation: fadeIn 1s ease-out;
+    padding-bottom: 50px;
 
     @media (max-width: 768px) {
         background: url('/mobile-homepage.jpg') no-repeat center/cover;
