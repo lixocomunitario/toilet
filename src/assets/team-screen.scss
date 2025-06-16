@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: center;
     background: url("/spaceBG.png") no-repeat center/cover;
+    background-color: #000000;
     animation: fadeIn 0.8s ease-out;
 
     @media (max-width: 768px) {
@@ -99,7 +100,7 @@
         @media (max-width: 768px) {
             padding-inline: 0!important;
             padding-bottom: 60px; /* Adicionado para separar do footer */
-            padding-top: 80px; /* Adiciona espaço no topo para mobile */
+            padding-top: 20px; /* Adiciona espaço no topo para mobile */
             height: auto; /* Permite altura automática */
             min-height: 100vh; /* Garante altura mínima */
         }
