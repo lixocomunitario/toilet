@@ -5,8 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url("/spaceBG.png") no-repeat center/cover;
-    background-color: #000000;
+    background: url("/spaceBG.png") no-repeat center/cover fixed;
     animation: fadeIn 0.8s ease-out;
 
     @media (max-width: 768px) {
